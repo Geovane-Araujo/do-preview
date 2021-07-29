@@ -33,7 +33,12 @@
         </div>
       </div>
     </div>
-      <vue-particles class="particles" color="#dedede"></vue-particles>
+    <div class="view">
+        <div class="center">
+          <h2>Geovane</h2>
+        </div>
+      <vue-particles clickMode="push" :particlesNumber="300" class="particles" color="#dedede"></vue-particles>
+    </div>
   </div>
 </template>
 
@@ -41,6 +46,23 @@
 </script>
 
 <style lang="scss" scoped>
+.view{
+  height: 100%;
+  width: 80%;
+  position: relative;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.center{
+  color: #fff;
+  z-index: 9999;
+  position: relative;
+  text-align: center;
+}
 .mg{
   margin-bottom: 2em;
 }
@@ -57,11 +79,11 @@
   border-radius: 13px;
   box-shadow: 1px 1px 1px rgb(51, 51, 51);
   height: 100%;
-  width: 30%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #55440F 0%,#FFCD2E 100%);
+  background: linear-gradient(135deg, #E8AF00 0%,#FECD1B 100%);
 }
 .formulario{
   width: 85%;
