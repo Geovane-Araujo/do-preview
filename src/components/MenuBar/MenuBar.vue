@@ -112,7 +112,7 @@ export default {
 
 <style lang="scss" scoped>
 .menus{
-  height: 10vh;
+  height: 8vh;
   background-color: rgba($color: #333333, $alpha: 1.0);
 }
 </style>
