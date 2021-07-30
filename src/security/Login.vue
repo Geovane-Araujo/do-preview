@@ -35,7 +35,6 @@
     </div>
     <div class="view">
         <div class="center">
-          <h2>Geovane</h2>
         </div>
       <vue-particles clickMode="push" :particlesNumber="300" class="particles" color="#dedede"></vue-particles>
     </div>
