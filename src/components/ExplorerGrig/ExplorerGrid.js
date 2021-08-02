@@ -9,7 +9,7 @@ export default {
   },
   data () {
     return {
-      customers: []
+      customers: null
     }
   },
   mounted () {
@@ -22,7 +22,7 @@ export default {
       })
     }
   },
-  component: {
+  components: {
     DataTable,
     Column,
     Button

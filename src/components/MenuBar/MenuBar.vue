@@ -97,8 +97,8 @@ export default {
           label: 'Principal',
           items: [
             {
-              label: 'Cadastros'
-              /* items: [
+              label: 'Cadastros',
+              items: [
                 {
                   label: 'Multi-Empresas'
                 },
@@ -120,7 +120,7 @@ export default {
                 {
                   label: 'Vendedores/Agentes/Colaboradores'
                 }
-              ] */
+              ]
             },
             {
               label: 'Vendas'
@@ -213,7 +213,7 @@ export default {
 }
 .footer{
   height: 7%;
-  background-color: rgba($color: #850f0f, $alpha: 1.0);
+  background-color: rgba($color: #333333, $alpha: 1.0);
 }
 .closable{
   margin-left: 10px;
@@ -221,7 +221,7 @@ export default {
 }
 .ariagrid{
   height: 100%;
-  background-color: #850f0f;
+  background-color: rgba($color: #333333, $alpha: 1.0);
 }
 .bc{
   height: 100%;
