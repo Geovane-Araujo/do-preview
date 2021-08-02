@@ -1,7 +1,7 @@
 <template>
 <div class="page">
   <div class="tot">
-    <MenuBar class="p-menuitem p-submenu-list" :model="menubar" />
+    <MenuBar :model="menubar" />
     <TabView class="colors">
       <TabPanel header="Cadastros">
         <div>
@@ -36,20 +36,22 @@
     </TabView>
   </div>
   <div class="content">
-    <TabView>
+    <TabView v-model:activeIndex="ativa">
       <TabPanel>
         <template #header>
           <span>Mural</span>
         </template>
-        <div>
-          <explorer-table/>
+        <div class="ariagrid">
         </div>
       </TabPanel>
-      <TabPanel v-for="item in tab" :key="item.label">
+      <TabPanel v-for="item in tab" :key="item.id">
         <template #header>
           <span>{{item.label}}</span>
           <span class="closable" @click="onClose(item)">x</span>
         </template>
+        <div class="ariagrid">
+          <explorer></explorer>
+        </div>
       </TabPanel>
     </TabView>
   </div>
@@ -73,7 +75,111 @@
 
 </template>
 
-<script src="./MenuBar.js">
+<script>
+import MenuBar from 'primevue/menubar'
+import TabView from 'primevue/tabview'
+import TabMenu from 'primevue/tabmenu'
+import TabPanel from 'primevue/tabpanel'
+import Button from 'primevue/button'
+export default {
+  name: 'menu-bar',
+  data () {
+    return {
+      tab: [
+        {
+          label: 'Atendimento',
+          header: 'atendimento',
+          id: 'd'
+        }
+      ],
+      menubar: [
+        {
+          label: 'Principal',
+          items: [
+            {
+              label: 'Cadastros'
+              /* items: [
+                {
+                  label: 'Multi-Empresas'
+                },
+                {
+                  label: 'Usuários'
+                },
+                {
+                  label: 'Clientes'
+                },
+                {
+                  label: 'Fornecedores'
+                },
+                {
+                  label: 'Contabilistas/Contadores'
+                },
+                {
+                  label: 'Transportadoras'
+                },
+                {
+                  label: 'Vendedores/Agentes/Colaboradores'
+                }
+              ] */
+            },
+            {
+              label: 'Vendas'
+            },
+            {
+              label: 'Compras'
+            },
+            {
+              label: 'Serviços'
+            }
+          ]
+        },
+        {
+          label: 'Veterinaria'
+        },
+        {
+          label: 'Relatórios'
+        },
+        {
+          label: 'Utilitários'
+        }
+      ],
+      ativa: 0
+    }
+  },
+  setup () {
+    return {
+    }
+  },
+  methods: {
+    onclick () {
+      var p = {
+        label: 'Contas.Receber',
+        to: '/mural'
+      }
+      this.tab.push(p)
+      this.ativa = this.tab.length
+    },
+    onClose (item) {
+      var i = 0
+      this.tab.forEach(element => {
+        if (element.label === item.label) {
+          console.log(i)
+          this.tab.splice(i)
+          console.log(this.tab)
+        }
+        i++
+      })
+      this.ativa = this.tab.length
+    }
+  },
+  components: {
+    MenuBar,
+    TabView,
+    TabPanel,
+    TabMenu,
+    Button
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -113,5 +219,11 @@
   margin-left: 10px;
   z-index: 1;
 }
-
+.ariagrid{
+  height: 100%;
+  background-color: #850f0f;
+}
+.bc{
+  height: 100%;
+}
 </style>
