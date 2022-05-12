@@ -1,24 +1,8 @@
-# dataon-vet
+## App para pet-shops e banho e tosa
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+devido ter saido da empresa ao qual desenvolve sistema para clinicas veterinárias e pet-shps, possivelmente
+não daremos continuidade pelo bom relacionamento
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Entretando mantendo o projeto pois futuramente pode ser desenvolvido, visto que o foco da DataOn é para empresas maiores
